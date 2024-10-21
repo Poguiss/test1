@@ -10,12 +10,13 @@
     --cor-de-texto: rgb(2, 2, 46);
     --cor-primaria: blue;
     --cor-secundaria: rgb(55, 55, 240);
-    --fonte: 'Inter', 'arial';
+    --fonte: "Rethink Sans", sans-serif;;
     --transicao: all 0.3s ease;
 }
 
 body{
     font-family: var(--fonte);
+    font-optical-sizing: auto;
 }
 .contenda {
     max-width: 1200px;
@@ -72,11 +73,14 @@ nav{
 
 main{
     margin-top: 5rem;
+    position: relative;
+    z-index: 5;
 }
 
 section{
     padding: 6rem 0;
     margin-left: 3rem;
+    margin-right: 3rem;
 }
 
 .dev{
@@ -90,8 +94,8 @@ section{
     width: 450px;
     height: auto;
     position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 20%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 40%;
     object-fit: cover;
 }
 
@@ -128,7 +132,7 @@ color: var(--cor-primaria);
 
 .skills-item{
     background-color: var(--cor-de-fundo-card);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     padding: 2rem;
     text-align: center;
     border-radius: 10px;
@@ -144,10 +148,116 @@ color: var(--cor-primaria);
    margin-bottom: 1rem;
 }
 #particles-js{
-    background-color: #092428;
+    background-color: grey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 0;
 }
 
-.particles-js{
-    size: 100%;
+.projetos-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
+.projeto-card{
+    background-color: var(--cor-de-fundo-card);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: var(--transicao);
+    padding: 1.1rem;
+}
+.projeto-card:hover{
+    transform: translateY(-5px);
+}
+
+.titulo-projeto{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-secundaria);   
+}
+
+.projetos-tags{
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projetos-tags spam{
+    background-color: rgb(255, 166, 0);
+    color: #000000;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.Contato{
+    background-color: rgb(252, 151, 0);
+    color: black;
+}
+
+.contato-for{
+    max-width: 600px;
+     margin: 0 auto;
+}
+
+.grupo-formulario{
+    margin-bottom: 1.5rem;
+}
+
+label{
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+input, textarea{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    padding: 0,75rem;
+    border-radius: 5px;
+    width: 100%;
+}
+
+textarea{
+    padding: 3rem;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+button:hover{
+    transform: translateY(-5px);
+}
+
+footer{
+    background-color: grey;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.icon-footer{   
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: none;
+}
+
+@keyframes fade{
+    from{opacity: 0; transform: translateY(20px);}
+    to{opacity: 1;transform: translate(0);}
+}
+.fade-in{
+    animation: fade 1s ease-out;
+}
